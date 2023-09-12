@@ -1,0 +1,31 @@
+# Dependencies installation stage
+FROM node:20-alpine AS deps
+RUN apk add --no-cache libc6-compat
+WORKDIR /app
+COPY package.json yarn.lock ./
+RUN yarn config set network-timeout 600000 -g && yarn install
+ENV PATH /opt/node_modules/.bin:$PATH
+
+# Building stage
+FROM node:20-alpine AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
+RUN yarn build
+
+# Preprocessing stage
+FROM node:20-alpine AS runner
+WORKDIR /app
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 sveltekitjs
+COPY --from=builder --chown=sveltekitjs:nodejs /app/.svelte-kit ./.svelte-kit
+COPY --from=builder --chown=sveltekitjs:nodejs /app/build ./build
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
+
+# Running stage
+USER sveltekitjs
+EXPOSE 3000
+ENV NODE_ENV production
+ENV PORT 3000
+CMD ["node", "./build"]

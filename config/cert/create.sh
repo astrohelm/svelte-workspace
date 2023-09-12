@@ -1,0 +1,1 @@
+mkcert -install -key-file local.key.pem -cert-file local.cert.pem localhost admin.localhost

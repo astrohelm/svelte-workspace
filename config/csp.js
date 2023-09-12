@@ -1,0 +1,43 @@
+/* eslint-disable quotes */
+
+export default {
+  'base-uri': ["'self'"],
+  'child-src': ["'self'"],
+  'connect-src': [
+    "'self'",
+    'ws://localhost:*',
+    'ws://127.0.0.1:*',
+    'https://yandex.ru',
+    'https://play.google.ru',
+    'https://*.yandex.ru',
+    'https://*.youtube.com',
+    'https://www.youtube.com',
+  ],
+  'img-src': ["'self'", '*'],
+  'font-src': ["'self'", 'https://*.googleapis.com', 'https://*.gstatic.com'],
+  'form-action': ["'self'"],
+  'frame-ancestors': ["'self'"],
+  'frame-src': ["'self'", '*'],
+  'manifest-src': ["'self'"],
+  'media-src': ["'self'", '*'],
+  'object-src': ["'none'"],
+  'style-src': [
+    "'self'",
+    "'unsafe-inline'",
+    'https://*.googleapis.com',
+    'https://*.gstatic.com',
+    'https://res.cloudinary.com',
+  ],
+  'default-src': [
+    "'self'",
+    'https://*.google.com',
+    'https://*.googleapis.com',
+    'https://*.yandex.com',
+    'https://*.gstatic.com',
+    'https://*.youtube.com',
+    'https://*.rutube.ru',
+    'https://*.yandex.ru',
+  ],
+  'script-src': ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+  'worker-src': ["'self'"],
+};

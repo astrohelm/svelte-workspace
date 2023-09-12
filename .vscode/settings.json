@@ -1,0 +1,41 @@
+{
+  "prettier.stylelintIntegration": true,
+  "cSpell.language": "en,ru",
+  "cSpell.words": [],
+  "css.validate": false,
+  "scss.validate": false,
+  "less.validate": false,
+  "stylelint.config": null,
+  "stylelint.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true
+  },
+  "stylelint.snippet": [
+    "css",
+    "less",
+    "postcss",
+    "scss"
+  ],
+  "stylelint.validate": [
+    "css",
+    "less",
+    "postcss",
+    "scss",
+    "svelte"
+  ],
+  "stylelint.configFile": ".stylelintrc.cjs",
+  "testing.automaticallyOpenPeekView": "never",
+  "cmake.configureOnOpen": false,
+  "explorer.fileNesting.patterns": {
+    "Dockerfile": "Dockerfile, .dockerignore"
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true
+  },
+  "explorerExclude.backup": {},
+}
