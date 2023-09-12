@@ -4,7 +4,7 @@
   "type": "module",
   "name": "astrohelm-workspace",
   "homepage": "https://astrohelm.ru",
-  "description": "Astrohelm workspace example",
+  "description": "Astrohelm sveltekit workspace",
   "author": "Alexander Ivanov <sashapop101@gmail.com>",
   "keywords": [
     "sveltejs",
